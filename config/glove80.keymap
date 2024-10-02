@@ -48,18 +48,13 @@ ZMK_LAYER(def,
   &kp F1     &kp F2    &kp F3       &kp F4       &kp F5                                                                                                  &kp F6        &kp F7       &kp F8       &kp F9    &kp F10
   &kp GRAVE  &kp N1    &kp N2       &kp N3       &kp N4        &kp N5                                                                            &kp N6  &kp N7        &kp N8       &kp N9       &kp N0    &kp MINUS
   &kp TAB    &kp Q     &kp W        &kp E        &kp R         &kp T                                                                             &kp Y   &kp U         &kp I        &kp O        &kp P     &kp BSLH
-  &kp BSPC   &kp A     &hml LGUI S  &hml LALT D  &hml LCTRL F  &kp G                                                                             &kp H   &hmr RCTRL J  &hmr RALT K  &hmr RGUI L  &kp SEMI  &kp SQT
-  XXX        &kp Z     &kp X        &kp C        &kp V         &kp B      &mo SYM    &kp LCTRL  &kp F11   /**/  &kp F12   &kp RCTRL  &mo SYM     &kp N   &kp M         &kp COMMA    &kp DOT      &kp FSLH  &kp DEL
-  &kp LGUI   &kp LEFT  &kp RIGHT    &kp LBKT     &kp LSHFT                &kp SPACE  &kp ESC    &kp LALT  /**/  &kp RALT  &kp EQUAL  &kp RET             &kp RSHFT     &kp RBKT     &kp DOWN     &kp UP    &kp RGUI
+  &kp BSPC   &kp A     &hml LALT S  &hml LCTRL D  &hml LSHFT F  &hml LGUI G                                                                             &hmr RGUI H   &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &kp SEMI  &kp SQT
+  XXX        &kp Z     &kp X        &kp C        &kp V         &kp B      &kp ESC    &kp LCTRL  &kp F11   /**/  &kp F12   &kp RCTRL  &kp EQUAL     &kp N   &kp M         &kp COMMA    &kp DOT      &kp FSLH  &kp DEL
+  &kp LGUI   &kp LSHFT  &kp LBKT    &kp LEFT     &kp RIGHT                &kp SPACE  &mo SYM    &kp LALT  /**/  &kp RALT  &mo SYM  &kp RET             &kp DOWN     &kp UP     &kp RBKT     &kp RSHFT    &kp RGUI
 )
 
 ZMK_LAYER(sym,
-  &kp F1     &kp F2    &kp F3       &kp F4       &kp F5                                                                                                  &kp F6        &kp F7       &kp F8       &kp F9    &kp F10
-  &kp GRAVE  &kp N1    &kp N2       &kp N3       &kp N4        &kp N5                                                                            &kp N6  &kp N7        &kp N8       &kp N9       &kp N0    &kp MINUS
-  &kp TAB    &kp Q     &kp W        &kp E        &kp R         &kp T                                                                             &kp Y   &kp U         &kp I        &kp O        &kp P     &kp BSLH
-  &kp BSPC   &kp A     &hml LGUI S  &hml LALT D  &hml LCTRL F  &kp G                                                                             &kp H   &hmr RCTRL J  &hmr RALT K  &hmr RGUI L  &kp SEMI  &kp SQT
-  XXX        &kp Z     &kp X        &kp C        &kp V         &kp B      XXX        &kp LCTRL  &kp F11   /**/  &kp F12  &kp RCTRL   XXX         &kp N   &kp M         &kp COMMA    &kp DOT      &kp FSLH  &kp DEL
-  &kp LGUI   &kp LEFT  &kp RIGHT    &kp LBKT     &kp LSHFT                &kp SPACE  &kp ESC    &to GAM   /**/  &to GAM  &kp EQUAL  &kp RET              &kp RSHFT     &kp RBKT     &kp DOWN     &kp UP    &kp RGUI
+  XXX     XXX    XXX       XXX       XXX                                                                                                  XXX        XXX       XXX       XXX    XXX  XXX  XXX    XXX       XXX       XXX        XXX                                                                            XXX  XXX        XXX       XXX       XXX    XXX  XXX    XXX     XXX        XXX        XXX         XXX                                                                             XXX   XXX         XXX        XXX        XXX     XXX  XXX   XXX     XXX XXX  XXX  XXX                                                                             XXX   XXX   XXX   XXX   XXX  XXX  XXX        XXX     XXX        XXX        XXX         XXX      XXX        XXX  XXX   /**/  XXX  XXX   XXX         XXX   XXX         XXX    XXX      XXX  XXX  XXX   XXX  XXX    XXX     XXX                XXX  XXX    XXX   /**/  XXX  XXX  XXX              XXX     XXX     XXX     XXX    XXX
 )
 
 ZMK_LAYER(gam,
@@ -67,7 +62,7 @@ ZMK_LAYER(gam,
   &kp GRAVE  &kp N1    &kp N2       &kp N3       &kp N4        &kp N5                                                                            &kp N6  &kp N7        &kp N8       &kp N9       &kp N0    &kp MINUS
   &kp TAB    &kp Q     &kp W        &kp E        &kp R         &kp T                                                                             &kp Y   &kp U         &kp I        &kp O        &kp P     &kp BSLH
   &kp BSPC   &kp A     &kp S        &kp D        &kp F         &kp G                                                                             &kp H   &kp J         &kp K        &kp L        &kp SEMI  &kp SQT
-  XXX        &kp Z     &kp X        &kp C        &kp V         &kp B      &to DEF    &kp LCTRL  &kp F11   /**/  &kp F12   &kp RCTRL  &to DEF     &kp N   &kp M         &kp COMMA    &kp DOT      &kp FSLH  &kp DEL
+  XXX        &kp Z     &kp X        &kp C        &kp V         &kp B      &mo SYM    &kp LCTRL  &kp F11   /**/  &kp F12   &kp RCTRL  &mo SYM     &kp N   &kp M         &kp COMMA    &kp DOT      &kp FSLH  &kp DEL
   &kp LGUI   &kp LEFT  &kp RIGHT    &kp LBKT     &kp LSHFT                &kp SPACE  &kp ESC    &kp LALT  /**/  &kp RALT  &kp EQUAL  &kp RET             &kp RSHFT     &kp RBKT     &kp DOWN     &kp UP    &kp RGUI
 )
 

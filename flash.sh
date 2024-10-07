@@ -7,15 +7,27 @@ mkdir -p mnt/
 just build glove80
 
 sudo echo "need root for next steps"
-read -n1 -rp "Put right half of glove80 in flash mode and then press any key"
-echo ""
+echo "Put right half of glove80 in flash mode (boot while holding RGUI+I)"
+
+until [ -e /dev/disk/by-label/GLV80RHBOOT ]; do
+  sleep 1
+  echo -n "."
+done
+
+echo "flashing..."
 
 sudo mount /dev/disk/by-label/GLV80RHBOOT mnt
 sudo cp firmware/glove80_rh.uf2 mnt/
 sudo umount mnt
 
-read -n1 -rp "Put left half of glove80 in flash mode and then press any key"
-echo ""
+echo "Put left half of glove80 in flash mode (boot while holding LGUI+E)"
+
+until [ -e /dev/disk/by-label/GLV80LHBOOT ]; do
+  sleep 1
+  echo -n "."
+done
+
+echo "flashing..."
 
 sudo mount /dev/disk/by-label/GLV80LHBOOT mnt
 sudo cp firmware/glove80_lh.uf2 mnt/

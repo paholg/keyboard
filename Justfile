@@ -84,8 +84,8 @@ clean-nix:
 draw:
     #!/usr/bin/env bash
     set -euo pipefail
-    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/base.keymap" >"{{ draw }}/base.yaml"
-    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/base.yaml" -k "ferris/sweep" >"{{ draw }}/base.svg"
+    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/glove80.keymap" >"{{ draw }}/glove80.yaml"
+    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/glove80.yaml" >"{{ draw }}/glove80.svg"
 
 # initialize west
 init:

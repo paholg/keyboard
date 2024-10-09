@@ -37,14 +37,14 @@ layers:
   - \
   - BSPC
   - A
-  - S
+  - {t: S, h: LGUI}
   - {t: D, h: LALT}
   - {t: F, h: LCTRL}
-  - {t: G, h: LGUI}
-  - {t: H, h: RGUI}
+  - G
+  - H
   - {t: J, h: RCTRL}
   - {t: K, h: RALT}
-  - L
+  - {t: L, h: RGUI}
   - ;
   - ''''
   - ''

@@ -68,6 +68,9 @@ build expr *west_args: _parse_combos
         just _build_single "$board" "$shield" {{ west_args }}
     done
 
+build_glove80:
+    just build glove80
+
 # clear build cache and artifacts
 clean:
     rm -rf {{ build }} {{ out }}
@@ -86,6 +89,39 @@ draw:
     set -euo pipefail
     keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/glove80.keymap" >"{{ draw }}/glove80.yaml"
     keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/glove80.yaml" >"{{ draw }}/glove80.svg"
+
+flash: build_glove80 draw
+    #!/usr/bin/env bash
+    set -euo pipefail
+
+    mkdir -p mnt/
+    
+    sudo echo "need root for next steps"
+    echo "Put right half of glove80 in flash mode (boot while holding RGUI+I aka RF5+RT2)"
+    
+    until [ -e /dev/disk/by-label/GLV80RHBOOT ]; do
+      sleep 1
+      echo -n "."
+    done
+    
+    echo "flashing..."
+    
+    sudo mount /dev/disk/by-label/GLV80RHBOOT mnt
+    sudo cp firmware/glove80_rh.uf2 mnt/
+    sudo umount mnt
+    
+    echo "Put left half of glove80 in flash mode (boot while holding LGUI+E aka LF5+LT2)"
+    
+    until [ -e /dev/disk/by-label/GLV80LHBOOT ]; do
+      sleep 1
+      echo -n "."
+    done
+    
+    echo "flashing..."
+    
+    sudo mount /dev/disk/by-label/GLV80LHBOOT mnt
+    sudo cp firmware/glove80_lh.uf2 mnt/
+    sudo umount mnt
 
 # initialize west
 init:

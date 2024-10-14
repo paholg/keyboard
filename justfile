@@ -90,6 +90,9 @@ draw:
     keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/glove80.keymap" >"{{ draw }}/glove80.yaml"
     keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/glove80.yaml" >"{{ draw }}/glove80.svg"
 
+redraw:
+    watchexec -w config/ just draw
+
 flash: build_glove80 draw
     #!/usr/bin/env bash
     set -euo pipefail
@@ -104,7 +107,7 @@ flash: build_glove80 draw
       echo -n "."
     done
     
-    echo "flashing..."
+    echo "\nflashing..."
     
     sudo mount /dev/disk/by-label/GLV80RHBOOT mnt
     sudo cp firmware/glove80_rh.uf2 mnt/
@@ -117,7 +120,7 @@ flash: build_glove80 draw
       echo -n "."
     done
     
-    echo "flashing..."
+    echo "\nflashing..."
     
     sudo mount /dev/disk/by-label/GLV80LHBOOT mnt
     sudo cp firmware/glove80_lh.uf2 mnt/

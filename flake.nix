@@ -14,40 +14,45 @@
     # zephyr-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, zephyr-nix, ... }: let
-    systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
-    forAllSystems = nixpkgs.lib.genAttrs systems;
-  in {
-    devShells = forAllSystems (system: let
-      pkgs = nixpkgs.legacyPackages.${system};
-      zephyr = zephyr-nix.packages.${system};
-      keymap_drawer = pkgs.python3Packages.callPackage ./draw { };
+  outputs =
+    { nixpkgs, zephyr-nix, ... }:
+    let
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
+      forAllSystems = nixpkgs.lib.genAttrs systems;
+    in
+    {
+      devShells = forAllSystems (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+          zephyr = zephyr-nix.packages.${system};
+          keymap_drawer = pkgs.python3Packages.callPackage ./draw { };
 
-    in {
-      default = pkgs.mkShell {
-        packages = [
-          keymap_drawer
+        in
+        {
+          default = pkgs.mkShell {
+            packages = [
+              keymap_drawer
 
-          zephyr.pythonEnv
-          (zephyr.sdk.override { targets = [ "arm-zephyr-eabi" ]; })
+              zephyr.pythonEnv
+              (zephyr.sdk.override { targets = [ "arm-zephyr-eabi" ]; })
 
-          pkgs.cmake
-          pkgs.dtc
-          pkgs.ninja
-          pkgs.qemu # needed for native_posix target
+              pkgs.cmake
+              pkgs.dtc
+              pkgs.ninja
+              pkgs.qemu # needed for native_posix target
 
-          # Uncomment these if you don't have system-wide versions:
-          # pkgs.gawk             # awk
-          # pkgs.unixtools.column # column
-          # pkgs.coreutils        # cp, cut, echo, mkdir, sort, tail, tee, uniq, wc
-          # pkgs.diffutils        # diff
-          # pkgs.findutils        # find, xargs
-          # pkgs.gnugrep          # grep
-          pkgs.just               # just
-          # pkgs.gnused           # sed
-          pkgs.yq                 # yq
-        ];
-      };
-    });
-  };
+              pkgs.just
+              pkgs.yq
+              pkgs.watchexec
+            ];
+          };
+        }
+      );
+    };
 }

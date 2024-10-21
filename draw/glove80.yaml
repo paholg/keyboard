@@ -37,14 +37,14 @@ layers:
   - \
   - BSPC
   - {t: A, h: LGUI}
-  - {t: S, h: sym}
-  - {t: D, h: LALT}
-  - {t: F, h: LCTRL}
+  - {t: S, h: LALT}
+  - {t: D, h: LCTRL}
+  - {t: F, h: sym}
   - G
   - H
-  - {t: J, h: RCTRL}
-  - {t: K, h: RALT}
-  - {t: L, h: sym}
+  - {t: J, h: sym}
+  - {t: K, h: RCTRL}
+  - {t: L, h: RALT}
   - {t: ;, h: RGUI}
   - ''''
   - PSCRN
@@ -105,46 +105,46 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - ''''
-  - <
-  - '>'
-  - '"'
-  - .
-  - '&'
-  - ':'
-  - '['
-  - ']'
-  - '%'
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - '!'
-  - {t: '-', type: held}
-  - +
-  - '='
-  - '#'
-  - '|'
-  - _
+  - '-'
   - (
-  - {t: ), type: held alternate}
-  - '?'
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - ^
-  - /
-  - '*'
-  - \
-  - .
+  - )
+  - +
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - '~'
-  - $
+  - _
+  - {t: '[', type: held}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ']', type: held alternate}
+  - '='
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
   - '{'
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
   - '}'
-  - '@'
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}

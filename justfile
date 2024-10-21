@@ -93,13 +93,15 @@ draw:
 redraw:
     watchexec -i draw/glove80.svg -i draw/glove80.yaml just draw
 
-flash: build_glove80 draw
+sudo:
+    sudo echo "need root for flashing"
+
+flash: sudo build_glove80 draw
     #!/usr/bin/env bash
     set -euo pipefail
 
     mkdir -p mnt/
     
-    sudo echo "need root for next steps"
     echo "Put right half of glove80 in flash mode (boot while holding RGUI+I aka RF5+RT2)"
     
     until [ -e /dev/disk/by-label/GLV80RHBOOT ]; do
@@ -107,7 +109,7 @@ flash: build_glove80 draw
       echo -n "."
     done
     
-    echo -e "\nflashing..."
+    echo "flashing..."
     
     sudo mount /dev/disk/by-label/GLV80RHBOOT mnt
     sudo cp firmware/glove80_rh.uf2 mnt/
@@ -120,7 +122,7 @@ flash: build_glove80 draw
       echo -n "."
     done
     
-    echo -e "\nflashing..."
+    echo "flashing..."
     
     sudo mount /dev/disk/by-label/GLV80LHBOOT mnt
     sudo cp firmware/glove80_lh.uf2 mnt/

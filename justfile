@@ -120,7 +120,7 @@ flash: build_glove80 draw
       echo -n "."
     done
     
-    echo "\nflashing..."
+    echo -e "\nflashing..."
     
     sudo mount /dev/disk/by-label/GLV80LHBOOT mnt
     sudo cp firmware/glove80_lh.uf2 mnt/

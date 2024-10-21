@@ -125,7 +125,7 @@ layers:
   - '|'
   - _
   - (
-  - )
+  - {t: ), type: held alternate}
   - '?'
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}

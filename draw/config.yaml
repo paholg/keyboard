@@ -1,5 +1,6 @@
 parse_config:
   trans_legend: {"t": " ", "type": "trans"}
+  mark_alternate_layer_activators: true
   zmk_preamble: "#include <zmk-helpers/key-labels/glove80.h>"
   zmk_additional_includes:
     - "modules/helpers/include"

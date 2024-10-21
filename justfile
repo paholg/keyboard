@@ -91,7 +91,7 @@ draw:
     keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/glove80.yaml" >"{{ draw }}/glove80.svg"
 
 redraw:
-    watchexec -w config/ just draw
+    watchexec -i draw/glove80.svg -i draw/glove80.yaml just draw
 
 flash: build_glove80 draw
     #!/usr/bin/env bash
@@ -107,7 +107,7 @@ flash: build_glove80 draw
       echo -n "."
     done
     
-    echo "\nflashing..."
+    echo -e "\nflashing..."
     
     sudo mount /dev/disk/by-label/GLV80RHBOOT mnt
     sudo cp firmware/glove80_rh.uf2 mnt/

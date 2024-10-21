@@ -1,8 +1,8 @@
 parse_config:
+  trans_legend: {"t": " ", "type": "trans"}
   zmk_preamble: "#include <zmk-helpers/key-labels/glove80.h>"
   zmk_additional_includes:
     - "modules/helpers/include"
 
 draw_config:
-  footer_text: "urob/zmk-config"
   dark_mode: auto

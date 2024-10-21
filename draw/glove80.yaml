@@ -36,18 +36,18 @@ layers:
   - P
   - \
   - BSPC
-  - A
-  - {t: S, h: LGUI}
+  - {t: A, h: LGUI}
+  - {t: S, h: sym}
   - {t: D, h: LALT}
   - {t: F, h: LCTRL}
   - G
   - H
   - {t: J, h: RCTRL}
   - {t: K, h: RALT}
-  - {t: L, h: RGUI}
-  - ;
+  - {t: L, h: sym}
+  - {t: ;, h: RGUI}
   - ''''
-  - ''
+  - PSCRN
   - Z
   - X
   - C
@@ -66,7 +66,7 @@ layers:
   - /
   - DEL
   - LGUI
-  - ''
+  - '='
   - '['
   - LEFT
   - RIGHT
@@ -81,6 +81,87 @@ layers:
   - ']'
   - {t: gam, h: toggle}
   - RGUI
+  sym:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - ''''
+  - <
+  - '>'
+  - '"'
+  - .
+  - '&'
+  - ':'
+  - '['
+  - ']'
+  - '%'
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - '!'
+  - {t: '-', type: held}
+  - +
+  - '='
+  - '#'
+  - '|'
+  - _
+  - (
+  - )
+  - '?'
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - ^
+  - /
+  - '*'
+  - \
+  - .
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - '~'
+  - $
+  - '{'
+  - '}'
+  - '@'
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
   gam:
   - F1
   - F2
@@ -128,7 +209,7 @@ layers:
   - L
   - ;
   - ''''
-  - ''
+  - PSCRN
   - Z
   - X
   - C
@@ -147,7 +228,7 @@ layers:
   - /
   - DEL
   - LGUI
-  - ''
+  - '='
   - '['
   - LEFT
   - RIGHT
@@ -162,34 +243,3 @@ layers:
   - ']'
   - {t: def, h: toggle}
   - RGUI
-combos:
-- p: [27, 39]
-  k: (
-  l: [def]
-- p: [39, 51]
-  k: '['
-  l: [def]
-- p: [50, 68]
-  k: '{'
-  l: [def]
-- p: [26, 38]
-  k: '-'
-  l: [def]
-- p: [38, 50]
-  k: _
-  l: [def]
-- p: [29, 41]
-  k: +
-  l: [def]
-- p: [41, 59]
-  k: '='
-  l: [def]
-- p: [28, 40]
-  k: )
-  l: [def]
-- p: [40, 58]
-  k: ']'
-  l: [def]
-- p: [59, 75]
-  k: '}'
-  l: [def]

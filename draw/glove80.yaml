@@ -218,6 +218,87 @@ layers:
   - LSHFT
   - LCTRL
   - F11
+  - {t: was, h: toggle}
+  - RCTRL
+  - RSHFT
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - DEL
+  - LGUI
+  - '='
+  - '['
+  - LEFT
+  - RIGHT
+  - SPACE
+  - ESC
+  - LALT
+  - {t: def, h: toggle}
+  - '&caps_word'
+  - RET
+  - DOWN
+  - UP
+  - ']'
+  - {t: ' ', type: trans}
+  - RGUI
+  was:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - '-'
+  - TAB
+  - Q
+  - W
+  - W
+  - E
+  - R
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - \
+  - BSPC
+  - LSHFT
+  - A
+  - S
+  - D
+  - F
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - ''''
+  - PSCRN
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - LSHFT
+  - LCTRL
+  - F11
   - F12
   - RCTRL
   - RSHFT
@@ -235,11 +316,11 @@ layers:
   - SPACE
   - ESC
   - LALT
-  - RALT
+  - {t: def, h: toggle}
   - '&caps_word'
   - RET
   - DOWN
   - UP
   - ']'
-  - {t: def, h: toggle}
+  - {t: ' ', type: trans}
   - RGUI

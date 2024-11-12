@@ -36,16 +36,16 @@ layers:
   - P
   - \
   - BSPC
-  - {t: A, h: LGUI}
-  - {t: S, h: LALT}
-  - {t: D, h: LCTRL}
-  - {t: F, h: sym}
+  - A
+  - {t: S, h: LGUI}
+  - {t: D, h: LALT}
+  - {t: F, h: LCTRL}
   - G
   - H
-  - {t: J, h: sym}
-  - {t: K, h: RCTRL}
-  - {t: L, h: RALT}
-  - {t: ;, h: RGUI}
+  - {t: J, h: RCTRL}
+  - {t: K, h: RALT}
+  - {t: L, h: RGUI}
+  - ;
   - ''''
   - PSCRN
   - Z
@@ -67,18 +67,18 @@ layers:
   - DEL
   - LGUI
   - '='
-  - '['
   - LEFT
   - RIGHT
+  - sym
   - SPACE
   - ESC
   - LALT
   - RALT
   - '&caps_word'
   - RET
+  - sym
   - DOWN
   - UP
-  - ']'
   - {t: gam, h: toggle}
   - RGUI
   sym:
@@ -120,10 +120,10 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - _
-  - {t: '[', type: held}
+  - '['
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: ']', type: held alternate}
+  - ']'
   - '='
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -150,14 +150,14 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
+  - {type: held}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
+  - {type: held alternate}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -229,18 +229,18 @@ layers:
   - DEL
   - LGUI
   - '='
-  - '['
   - LEFT
   - RIGHT
+  - sym
   - SPACE
   - ESC
   - LALT
   - {t: def, h: toggle}
   - '&caps_word'
   - RET
+  - sym
   - DOWN
   - UP
-  - ']'
   - {t: ' ', type: trans}
   - RGUI
   was:
@@ -310,17 +310,17 @@ layers:
   - DEL
   - LGUI
   - '='
-  - '['
   - LEFT
   - RIGHT
+  - sym
   - SPACE
   - ESC
   - LALT
   - {t: def, h: toggle}
   - '&caps_word'
   - RET
+  - sym
   - DOWN
   - UP
-  - ']'
   - {t: ' ', type: trans}
   - RGUI

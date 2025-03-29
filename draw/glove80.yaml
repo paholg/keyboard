@@ -231,14 +231,14 @@ layers:
   - '='
   - LEFT
   - RIGHT
-  - sym
+  - LCTRL
   - SPACE
   - ESC
   - LALT
   - '&to_def'
   - '&caps_word'
   - RET
-  - sym
+  - RCTRL
   - DOWN
   - UP
   - {t: ' ', type: trans}
@@ -312,14 +312,14 @@ layers:
   - '='
   - LEFT
   - RIGHT
-  - sym
+  - LCTRL
   - SPACE
   - ESC
   - LALT
   - '&to_def'
   - '&caps_word'
   - RET
-  - sym
+  - RCTRL
   - DOWN
   - UP
   - {t: ' ', type: trans}

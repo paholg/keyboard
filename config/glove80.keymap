@@ -2,6 +2,7 @@
 #include <behaviors.dtsi>
 #include <behaviors/num_word.dtsi> // requires auto-layer module
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/rgb.h>
 
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/glove80.h"
@@ -13,7 +14,6 @@
 
 #define XXX &none
 #define ___ &trans
-
 
 /*                               GLOVE80 KEY MATRIX / LAYOUT MAPPING
  ╭────────────────────╮       ╭────────────────────╮ ╭────────────────────╮       ╭────────────────────╮
@@ -28,6 +28,40 @@
              │ 69  70  71 │ 72  73  74 │                         │ LH2 LH1 LH0│ RH0 RH1 RH2│
              ╰────────────┴────────────╯                         ╰────────────┴────────────╯
  */
+
+// Lighting stuff
+ZMK_MACRO(
+  to_def,
+  wait-ms = <0>;
+  tap-ms = <0>;
+  bindings
+    = <&macro_tap &rgb_ug RGB_OFF>,
+      <&macro_tap &to DEF>;
+    
+)
+ZMK_MACRO(
+  to_gam,
+  wait-ms = <0>;
+  tap-ms = <0>;
+  bindings
+    = <&macro_tap &rgb_ug RGB_ON>,
+      <&macro_tap &rgb_ug RGB_COLOR_HSB(0, 100, 2)>,
+      <&macro_tap &to GAM>;
+    
+)
+ZMK_MACRO(
+  to_was,
+  wait-ms = <0>;
+  tap-ms = <0>;
+  bindings
+    = <&macro_tap &rgb_ug RGB_ON>,
+      <&macro_tap &rgb_ug RGB_COLOR_HSB(60, 100, 2)>,
+      <&macro_tap &to WAS>;
+    
+)
+// Ensure the lighting starts off
+// &rgb_ug RGB_OFF
+
 
 /* Combos */
 #define COMBO_TERM_FAST 18
@@ -107,7 +141,7 @@ ZMK_LAYER(def,
   &kp TAB    &kp Q     &kp W        &kp E        &kp R         &kp T                                                                             &kp Y   &kp U         &kp I        &kp O        &kp P     &kp BSLH
   &kp BSPC   &kp A     &hml LGUI S  &hml LALT D  &hml LCTRL F  &kp G                                                                             &kp H   &hmr RCTRL J  &hmr RALT K  &hmr RGUI L  &kp SEMI  &kp SQT
   &kp PSCRN        &kp Z     &kp X        &kp C        &kp V         &kp B      &kp LSHFT    &kp LCTRL  &kp F11   /**/  &kp F12   &kp RCTRL  &kp RSHFT     &kp N   &kp M         &kp COMMA    &kp DOT      &kp FSLH  &kp DEL
-  &kp LGUI   &kp EQUAL       &kp LEFT    &kp RIGHT     &mo SYM                &kp SPACE  &kp ESC    &kp LALT  /**/  &kp RALT  &caps_word  &kp RET             &mo SYM     &kp DOWN     &kp UP     &to GAM    &kp RGUI
+  &kp LGUI   &kp EQUAL       &kp LEFT    &kp RIGHT     &mo SYM                &kp SPACE  &kp ESC    &kp LALT  /**/  &kp RALT  &caps_word  &kp RET             &mo SYM     &kp DOWN     &kp UP     &to_gam    &kp RGUI
 )
 
 
@@ -121,19 +155,19 @@ ZMK_LAYER(sym,
 )
 
 ZMK_LAYER(gam,
-  &kp F1     &kp F2    &kp F3       &kp F4       &kp F5                                                                                                  &kp F6        &kp F7       &kp F8       &kp F9    &kp F10
+  &kp F1     &kp F2    &kp F3       &kp F4       &kp F5                                                                                                  &kp F6        &kp F7       &kp F8       &kp F9    &rgb_ug RGB_EFF
   &kp GRAVE  &kp N1    &kp N2       &kp N3       &kp N4        &kp N5                                                                            &kp N6  &kp N7        &kp N8       &kp N9       &kp N0    &kp MINUS
   &kp TAB    &kp Q     &kp W        &kp E        &kp R         &kp T                                                                             &kp Y   &kp U         &kp I        &kp O        &kp P     &kp BSLH
   &kp BSPC   &kp A     &kp S        &kp  D       &kp F         &kp G                                                                             &kp H   &kp J         &kp K        &kp L  &kp SEMI  &kp SQT
-  &kp PSCRN        &kp Z     &kp X        &kp C        &kp V         &kp B      &kp LSHFT    &kp LCTRL  &kp F11   /**/  &to WAS   &kp RCTRL  &kp RSHFT     &kp N   &kp M         &kp COMMA    &kp DOT      &kp FSLH  &kp DEL
-  &kp LGUI   &kp EQUAL       &kp LEFT    &kp RIGHT     &mo SYM                &kp SPACE  &kp ESC    &kp LALT  /**/  &to DEF  &caps_word  &kp RET             &mo SYM     &kp DOWN     &kp UP     ___    &kp RGUI
+  &kp PSCRN        &kp Z     &kp X        &kp C        &kp V         &kp B      &kp LSHFT    &kp LCTRL  &kp F11   /**/  &to_was   &kp RCTRL  &kp RSHFT     &kp N   &kp M         &kp COMMA    &kp DOT      &kp FSLH  &kp DEL
+  &kp LGUI   &kp EQUAL       &kp LEFT    &kp RIGHT     &mo SYM                &kp SPACE  &kp ESC    &kp LALT  /**/  &to_def  &caps_word  &kp RET             &mo SYM     &kp DOWN     &kp UP     ___    &kp RGUI
 )
 
 ZMK_LAYER(was,
-  &kp F1     &kp F2    &kp F3       &kp F4       &kp F5                                                                                                  &kp F6        &kp F7       &kp F8       &kp F9    &kp F10
+  &kp F1     &kp F2    &kp F3       &kp F4       &kp F5                                                                                                  &kp F6        &kp F7       &kp F8       &kp F9    &rgb_ug RGB_EFF
   &kp GRAVE  &kp N1    &kp N2       &kp N3       &kp N4        &kp N5                                                                            &kp N6  &kp N7        &kp N8       &kp N9       &kp N0    &kp MINUS
   &kp TAB    &kp Q     &kp W        &kp W        &kp E         &kp R                                                                             &kp Y   &kp U         &kp I        &kp O        &kp P     &kp BSLH
   &kp BSPC   &kp LSHFT     &kp A        &kp  S       &kp D         &kp F                                                                             &kp H   &kp J         &kp K        &kp L  &kp SEMI  &kp SQT
   &kp PSCRN        &kp Z     &kp X        &kp C        &kp V         &kp B      &kp LSHFT    &kp LCTRL  &kp F11   /**/  &kp F12   &kp RCTRL  &kp RSHFT     &kp N   &kp M         &kp COMMA    &kp DOT      &kp FSLH  &kp DEL
-  &kp LGUI   &kp EQUAL       &kp LEFT    &kp RIGHT     &mo SYM                &kp SPACE  &kp ESC    &kp LALT  /**/  &to DEF  &caps_word  &kp RET             &mo SYM     &kp DOWN     &kp UP     ___    &kp RGUI
+  &kp LGUI   &kp EQUAL       &kp LEFT    &kp RIGHT     &mo SYM                &kp SPACE  &kp ESC    &kp LALT  /**/  &to_def  &caps_word  &kp RET             &mo SYM     &kp DOWN     &kp UP     ___    &kp RGUI
 )

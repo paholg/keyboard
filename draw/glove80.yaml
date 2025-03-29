@@ -79,7 +79,7 @@ layers:
   - sym
   - DOWN
   - UP
-  - {t: gam, h: toggle}
+  - '&to_gam'
   - RGUI
   sym:
   - {t: ' ', type: trans}
@@ -172,7 +172,7 @@ layers:
   - F7
   - F8
   - F9
-  - F10
+  - RGB EFF
   - '`'
   - '1'
   - '2'
@@ -218,7 +218,7 @@ layers:
   - LSHFT
   - LCTRL
   - F11
-  - {t: was, h: toggle}
+  - '&to_was'
   - RCTRL
   - RSHFT
   - N
@@ -235,7 +235,7 @@ layers:
   - SPACE
   - ESC
   - LALT
-  - {t: def, h: toggle}
+  - '&to_def'
   - '&caps_word'
   - RET
   - sym
@@ -253,7 +253,7 @@ layers:
   - F7
   - F8
   - F9
-  - F10
+  - RGB EFF
   - '`'
   - '1'
   - '2'
@@ -316,7 +316,7 @@ layers:
   - SPACE
   - ESC
   - LALT
-  - {t: def, h: toggle}
+  - '&to_def'
   - '&caps_word'
   - RET
   - sym

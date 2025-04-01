@@ -70,29 +70,17 @@ ZMK_MACRO(
 #define COMBO_IDLE_FAST 150
 #define COMBO_IDLE_SLOW 50
 
-#define DEF_COMBO(NAME, BIND, KEY1, KEY2) \
-  ZMK_COMBO(NAME, BIND, KEY1 KEY2, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+#define DEF_COMBO(NAME, BIND, LAYER, KEY1, KEY2) \
+  ZMK_COMBO(NAME, BIND, KEY1 KEY2, LAYER, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
-// DEF_COMBO(lpar, &kp LPAR, LT0, LM0)
-// DEF_COMBO(lbkt, &kp LBKT, LM0, LB0)
-// DEF_COMBO(lbrc, &kp LBRC, LB1, LF1)
+DEF_COMBO(gam_to_def, &to_def, GAM, RF1, RF2)
+DEF_COMBO(was_to_def, &to_def, WAS, RF1, RF2)
 
-// DEF_COMBO(dash, &kp MINUS, LT1, LM1)
-// DEF_COMBO(under, &kp UNDER, LM1, LB1)
+DEF_COMBO(def_to_gam, &to_gam, DEF, RF4, RF5)
+DEF_COMBO(was_to_gam, &to_gam, WAS, RF4, RF5)
 
-// DEF_COMBO(plus, &kp PLUS, RT1, RM1)
-// DEF_COMBO(equal, &kp EQUAL, RM1, RB1)
-
-// DEF_COMBO(rpar, &kp RPAR, RT0, RM0)
-// DEF_COMBO(rbkt, &kp RBKT, RM0, RB0)
-// DEF_COMBO(rbrc, &kp RBRC, RB1, RF1)
-
-// DEF_COMBO(gam_switch, &to GAM, LF4, RF4)
-
-// #define GAM_COMBO(NAME, BIND, KEY1, KEY2) \
-//   ZMK_COMBO(NAME, BIND, KEY1 KEY2, GAM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-// GAM_COMBO(gam_switch, &to DEF, LF4, RF4)
-
+DEF_COMBO(def_to_was, &to_was, DEF, RF3, RF4)
+DEF_COMBO(gam_to_was, &to_was, GAM, RF3, RF4)
 
 /* Homerow mods */
 
@@ -141,7 +129,7 @@ ZMK_LAYER(def,
   &kp TAB    &kp Q     &kp W        &kp E        &kp R         &kp T                                                                             &kp Y   &kp U         &kp I        &kp O        &kp P     &kp BSLH
   &kp BSPC   &kp A     &hml LGUI S  &hml LALT D  &hml LCTRL F  &kp G                                                                             &kp H   &hmr RCTRL J  &hmr RALT K  &hmr RGUI L  &kp SEMI  &kp SQT
   &kp PSCRN        &kp Z     &kp X        &kp C        &kp V         &kp B      &kp LSHFT    &kp LCTRL  &kp F11   /**/  &kp F12   &kp RCTRL  &kp RSHFT     &kp N   &kp M         &kp COMMA    &kp DOT      &kp FSLH  &kp DEL
-  &kp LGUI   &kp EQUAL       &kp LEFT    &kp RIGHT     &mo SYM                &kp SPACE  &kp ESC    &kp LALT  /**/  &kp RALT  &caps_word  &kp RET             &mo SYM     &kp DOWN     &kp UP     &to_gam    &kp RGUI
+  &kp LGUI   &kp EQUAL       &kp LEFT    &kp RIGHT     &mo SYM                &kp SPACE  &kp ESC    &kp LALT  /**/  &kp RALT  &caps_word  &kp RET             &mo SYM     &kp DOWN     &kp UP     ___    &kp RGUI
 )
 
 
@@ -159,8 +147,8 @@ ZMK_LAYER(gam,
   &kp GRAVE  &kp N1    &kp N2       &kp N3       &kp N4        &kp N5                                                                            &kp N6  &kp N7        &kp N8       &kp N9       &kp N0    &kp MINUS
   &kp TAB    &kp Q     &kp W        &kp E        &kp R         &kp T                                                                             &kp Y   &kp U         &kp I        &kp O        &kp P     &kp BSLH
   &kp BSPC   &kp A     &kp S        &kp  D       &kp F         &kp G                                                                             &kp H   &kp J         &kp K        &kp L  &kp SEMI  &kp SQT
-  &kp PSCRN        &kp Z     &kp X        &kp C        &kp V         &kp B      &kp LSHFT    &kp LCTRL  &kp F11   /**/  &to_was   &kp RCTRL  &kp RSHFT     &kp N   &kp M         &kp COMMA    &kp DOT      &kp FSLH  &kp DEL
-  &kp LGUI   &kp EQUAL       &kp LEFT    &kp RIGHT     &kp LCTRL                &kp SPACE  &kp ESC    &kp LALT  /**/  &to_def  &caps_word  &kp RET             &kp RCTRL     &kp DOWN     &kp UP     ___    &kp RGUI
+  &kp PSCRN        &kp Z     &kp X        &kp C        &kp V         &kp B      &kp LSHFT    &kp LCTRL  &kp F11   /**/  &kp F12   &kp RCTRL  &kp RSHFT     &kp N   &kp M         &kp COMMA    &kp DOT      &kp FSLH  &kp DEL
+  &kp LGUI   &kp EQUAL       &kp LEFT    &kp RIGHT     &kp LCTRL                &kp SPACE  &kp ESC    &kp LALT  /**/  &kp RALT  &caps_word  &kp RET             &kp RCTRL     &kp DOWN     &kp UP     ___    &kp RGUI
 )
 
 ZMK_LAYER(was,
@@ -169,5 +157,5 @@ ZMK_LAYER(was,
   &kp TAB    &kp G     &kp Q        &kp W        &kp E         &kp R                                                                             &kp Y   &kp U         &kp I        &kp O        &kp P     &kp BSLH
   &kp BSPC   &kp LSHFT     &kp A        &kp  S       &kp D         &kp F                                                                             &kp H   &kp J         &kp K        &kp L  &kp SEMI  &kp SQT
   &kp PSCRN        &kp Z     &kp X        &kp C        &kp V         &kp B      &kp LSHFT    &kp LCTRL  &kp F11   /**/  &kp F12   &kp RCTRL  &kp RSHFT     &kp N   &kp M         &kp COMMA    &kp DOT      &kp FSLH  &kp DEL
-  &kp LGUI   &kp EQUAL       &kp LEFT    &kp RIGHT     &kp LCTRL                &kp SPACE  &kp ESC    &kp LALT  /**/  &to_def  &caps_word  &kp RET             &kp RCTRL     &kp DOWN     &kp UP     ___    &kp RGUI
+  &kp LGUI   &kp EQUAL       &kp LEFT    &kp RIGHT     &kp LCTRL                &kp SPACE  &kp ESC    &kp LALT  /**/  &kp RALT  &caps_word  &kp RET             &kp RCTRL     &kp DOWN     &kp UP     ___    &kp RGUI
 )

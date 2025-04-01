@@ -79,7 +79,7 @@ layers:
   - sym
   - DOWN
   - UP
-  - '&to_gam'
+  - {t: ' ', type: trans}
   - RGUI
   sym:
   - {t: ' ', type: trans}
@@ -218,7 +218,7 @@ layers:
   - LSHFT
   - LCTRL
   - F11
-  - '&to_was'
+  - F12
   - RCTRL
   - RSHFT
   - N
@@ -235,7 +235,7 @@ layers:
   - SPACE
   - ESC
   - LALT
-  - '&to_def'
+  - RALT
   - '&caps_word'
   - RET
   - RCTRL
@@ -316,7 +316,7 @@ layers:
   - SPACE
   - ESC
   - LALT
-  - '&to_def'
+  - RALT
   - '&caps_word'
   - RET
   - RCTRL
@@ -324,3 +324,22 @@ layers:
   - UP
   - {t: ' ', type: trans}
   - RGUI
+combos:
+- p: [75, 76]
+  k: '&to_def'
+  l: [gam]
+- p: [75, 76]
+  k: '&to_def'
+  l: [was]
+- p: [78, 79]
+  k: '&to_gam'
+  l: [def]
+- p: [78, 79]
+  k: '&to_gam'
+  l: [was]
+- p: [77, 78]
+  k: '&to_was'
+  l: [def]
+- p: [77, 78]
+  k: '&to_was'
+  l: [gam]

@@ -66,7 +66,7 @@ layers:
   - /
   - DEL
   - LGUI
-  - '='
+  - '&to_arr'
   - LEFT
   - RIGHT
   - sym
@@ -79,8 +79,11 @@ layers:
   - sym
   - DOWN
   - UP
-  - {t: ' ', type: trans}
+  - '&to_arr'
   - RGUI
+  arr: [F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, '`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', TAB, Q, W, E, R, T, Y, U, I, O, P, \, BSPC, A, S, D,
+    F, G, H, J, K, L, ;, '''', PSCRN, Z, X, C, V, B, LSHFT, LCTRL, F11, F12, RCTRL, RSHFT, N, M, ',', ., /, DEL, LGUI, '&to_def', LEFT, RIGHT, sym, SPACE, ESC, LALT,
+    RALT, '&caps_word', RET, sym, DOWN, UP, '&to_def', RGUI]
   sym:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -327,6 +330,9 @@ layers:
 combos:
 - p: [75, 76]
   k: '&to_def'
+  l: [arr]
+- p: [75, 76]
+  k: '&to_def'
   l: [gam]
 - p: [75, 76]
   k: '&to_def'
@@ -336,10 +342,16 @@ combos:
   l: [def]
 - p: [78, 79]
   k: '&to_gam'
+  l: [arr]
+- p: [78, 79]
+  k: '&to_gam'
   l: [was]
 - p: [77, 78]
   k: '&to_was'
   l: [def]
+- p: [77, 78]
+  k: '&to_was'
+  l: [arr]
 - p: [77, 78]
   k: '&to_was'
   l: [gam]
